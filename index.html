@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/globalStyles.css" >
+    <link rel="stylesheet" href="./src/styles/index.css" >
+    <link rel="stylesheet" href="./src/styles/modal.css" >
+  
+    <title>Projeto Final M2</title>
+</head>
+<body class="body_Containner">
+
+<header>
+    <img src="./src/assets/img/Group 42.svg" alt="logo">
+    <div id="button_header--Containner">
+        <button id="button_header--login">Login</button>
+        <button id="button_header--cadastro">Cadastro</button>
+    </div>
+</header>
+<main>
+    <section class="GenericSection_containner">
+        <img src="./src/assets/img/Rectangle 6 (1).svg" alt="">
+    </section >
+
+    <section class="empresasSection_containner">              
+        <select name="filter" id="categories_filter">
+            <option id ="rederAllCategorys">Selecionar Setor</option>
+        </select>
+        <div id="listEmpresas_constainer">
+            <h2>Lista de Empresas</h2>
+        </div>   
+    </section>
+
+    <section class="GenericSection_containnerModal hide">
+        <img src="./src/assets/img/FundoModal.svg" alt="">
+    </section>
+
+    <section class="modal_controller">
+        <dialog id="loginModal_containner" >
+            <div>
+                <h1>Login</h1>
+                <p> Preencha os campos para realizar o login</p>
+                <form>
+                    <input type="email" id="emailLogin" class="login_input" name="email" placeholder="Seu e-mail"/>
+                    <input type="password"  id="passwordLogin" class="login_input" name="password" placeholder="Sua senha"/>
+                    <button class="login_button">Login</button>
+                    <p>ou</p>
+                    <button>Cadastre-se</button>
+                    <p>ou</p>
+                    <button id="return_homepage">Retornar</button>
+                </form>
+            </div>
+        </dialog>
+
+        <dialog id="cadastroModal_containner" >
+            <div>
+                <h1>Cadastre-se</h1>
+                <form>
+                    <input type="text" class="cadastro_input" name="name" placeholder="Seu nome"/>
+                    <input type="email" class="cadastro_input" name="email" placeholder="Seu e-mail"/>
+                    <input type="password" class="cadastro_input"  name="password" placeholder="Sua senha"/>
+                    <button id="button_header--cadastro" class="cadastro_button" >Cadastrar</button>
+                    <button  id="return_homepage">Retornar</button>
+                </form>
+            </div> 
+        </dialog>
+
+    </section>
+</main>
+<script type="module" src="./src/scripts/index.js"> </script>
+</body>
+</html>

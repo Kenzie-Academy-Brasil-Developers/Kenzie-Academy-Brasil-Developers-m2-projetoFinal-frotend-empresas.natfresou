@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/globalStyles.css" />
+    <link rel="stylesheet" href="../styles/adminPage.css" />
+  
+    <title>Projeto Final M2</title>
+</head>
+<body class="body_Containner">
+
+<header>
+    <img src="../assets/img/Group 42.svg" alt="logo">
+    <div id="button_header--Containner">
+        <button id="button_header--logout">Logout</button>
+    </div>
+</header>
+<main>
+    <section class="selectEmpresas">
+        <select name="filterEmpresas" id="empresas_filter">
+            <option id ="empresasFilter">Selecionar Empresas</option>
+        </select>
+    </section>
+    <section class="departamentosEmpresaSelect">
+        <div class="departamentosEmpresaSelect_divCriar">
+            <h1>Departamentos</h1>
+            <span class="divCriar_span">+ Criar</span>
+        </div>
+       
+        <div class="departamentosEmpresaSelect_divRender">
+        </div>
+    </section>
+    <section class="cadastroUsers">
+        <h1>Usuários cadastrados</h1>
+        <div class="cadastroUsers_divRender">
+            
+        </div>
+
+    </section>
+    <section class="modal_controller">
+ 
+        <dialog class="modalDepartamento_criar genericCSS_Modal">
+            <div>
+                <div>
+                    <span class="spanClose">X</span>
+                </div>
+                <h1>Criar departamento</h1>
+                <Input type="text" name="name" placeholder="Nome do departamento" id="criarDepartamento_newNome"></Input>
+                <Input type="text" name="description" placeholder="Descrição" id="criarDepartamento_newDescrição"></Input>
+                <select name="" id="criarDepartamento_select">
+                    <option id ="">Selecionar Empresas</option>
+                </select>   
+                <button>Criar</button>
+            </div>
+        </dialog>
+
+        <dialog class="modalDepartamento_visualizar">
+            <div>
+                <div>
+                    <span>X</span>
+                </div>
+                <h1>Nome do departamento</h1>
+                <h3>Descrição do departamento</h3>
+                <p>Empresa pertencente</p>
+                <div>
+                    <select name="" id="">
+                        <option id ="">Selecionar Usuário</option>
+                    </select>
+                    <button>Contratar</button>
+                </div>
+                <div>
+    
+                </div>
+            </div>
+        </dialog>
+
+      
+
+        <dialog class="modalDepartamento_editar">
+            <div>
+                <div>
+                    <span>X</span>
+                </div>
+                <h1>editar departamento</h1>
+                <Input type="text" name="nome" placeholder="Nome do departamento"></Input>
+                <button>Salvar</button>
+            </div>
+        </dialog>
+
+        <dialog class="modalDepartamento_deletar">
+            <div>
+                <div>
+                    <span>X</span>
+                </div>
+                <h1>Realmente deseja remover o departamento e demitir todos os funcionários?</h1>
+                <button>Remover</button>
+            </div>
+        </dialog>
+
+        <dialog class="modalUser_editar">
+            <div>
+                <div>
+                    <span>X</span>
+                </div>
+                <h1>editar usuário</h1>
+                <Input type="text" name="nome" placeholder="Nome"></Input>
+                <Input type="email" name="email" placeholder="Email"></Input>
+                <button>Salvar</button>
+            </div>
+        </dialog>
+
+        <dialog class="modalUser_deletar">
+            <div>
+                <div>
+                    <span>X</span>
+                </div>
+                <h1>Realmente deseja remover o usuário?</h1>
+                <button>Remover</button>
+            </div>
+        </dialog>
+        
+    </section>
+    <script type="module" src="../scripts/adminPage.js"> </script>
+</main>
+</body>
+</html>

@@ -1,0 +1,355 @@
+main{
+    width: 100%;
+    height: calc(100vh - 130px);/*usando para abatero cabeçalho*/
+    display: flex;
+    flex-direction: column; 
+
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+}
+header>img{
+    width: 320px;
+    height: 25px;
+    margin-left: 140px;
+}
+
+#button_header--Containner {
+    padding-right: 140px;
+    display: flex;
+    flex-direction: row;
+}
+
+#button_header--Containner > button {
+    width: 142px;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter';
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #0000FF;
+    color: #0000FF;
+    cursor: pointer;
+}
+
+#button_header--Containner > button:hover{
+    background: #0000FF;
+    border: 1px solid #0000FF;
+    color: #FFFFFF;
+}
+.selectEmpresas{
+    width: calc(100% - 280px);/*usando para abatero cabeçalho*/
+    margin-left: 140px;
+    margin-right: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.selectEmpresas>select{
+    background-color: #0000FF;
+    color: white;
+    padding: 15px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 25px;
+    width: 288px;
+}
+.departamentosEmpresaSelect {
+    width: calc(100% - 280px);/*usando para abatero cabeçalho*/
+    margin-left: 140px;
+    margin-right: 140px;
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 50px;
+
+}
+
+
+.departamentosEmpresaSelect_divCriar{
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.departamentosEmpresaSelect_divCriar>h1{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+.departamentosEmpresaSelect_divCriar>span{
+    background-color: #0000FF;
+    color: white;
+    padding: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    width: 150px;
+}
+
+.departamentosEmpresaSelect_divRender{
+    width:100%;
+    height: 385px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 4px -2px #989898;
+    -moz-box-shadow: 0 4px 4px -2px #989898;
+    -webkit-box-shadow: 0 4px 4px -2px #989898;
+}
+.cadastroUsers{
+    width: calc(100% - 280px);/*usando para abatero cabeçalho*/
+    margin-left: 140px;
+    margin-right: 140px;
+    display: flex;
+    flex-direction: column; 
+    padding-bottom: 50px;
+}
+.cadastroUsers>h1{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 20px;
+}
+
+.cadastroUsers_divRender{
+    width:100%;
+    height: 385px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    background: #F8F8F8;
+}
+
+#li_cadastroUsersRender{
+    width:489px;
+    height:145px;
+    background: #FFFFFF;
+    border: 1px solid #0000FF;
+    position:relative;
+    margin:45px;
+    padding: 20px;
+}
+
+#li_cadastroUsersRender>div{
+    display: flex;
+    flex-direction: column; 
+}
+
+#li_cadastroUsersRender>div>h2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+    margin-bottom: 15px;
+}
+#li_cadastroUsersRender>div>p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+}
+
+#ul_cadastroUsersRender{
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+}
+#wastImg_cadastroUsersRender{
+    width:22.67px;
+    height:25.5px;
+    position: absolute;
+    top: 85px;
+    right:35px;
+}
+
+#pencilImg_cadastroUsersRender{
+    width:27.49px;
+    height:27.49px;
+    position: absolute;
+    top: 35px;
+    right:35px;
+}
+
+.li_container {
+    width:489px;
+    height:196px;
+    background: #FFFFFF;
+    border: 1px solid #0000FF;
+    position:relative;
+    margin:45px;
+    padding: 20px;
+}
+
+.li_container>div{
+    display: flex;
+    flex-direction: column; 
+}
+
+.li_container>div>h2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+    margin-bottom: 15px;
+}
+.li_container>div>p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+.ul_container{
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+}
+.wastImg{
+    width:22.67px;
+    height:25.5px;
+    position: absolute;
+    top: 135px;
+    right:35px;
+}
+
+.pencilImg{
+    width:27.49px;
+    height:27.49px;
+    position: absolute;
+    top:85px;
+    right:35px;
+}
+.eyeImg{
+    width:27.49px;
+    height:27.49px;
+    position: absolute;
+    top: 35px;
+    right:35px;
+}
+
+#semDetartamento_mensage{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 30px;
+    color: #000000;
+    margin-bottom: 10px;
+    margin-top: 150px;
+    margin-left: 100px;
+
+}
+
+.modalDepartamento_criar{
+    background: rgba(255, 255, 255, 0.95);
+    padding: 42px;
+    border: 2px solid cornflowerblue;
+
+}
+
+.modalDepartamento_criar{
+ width: 506px;
+ height: 402px;
+}
+
+.genericCSS_Modal>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 40px;
+}
+
+
+.genericCSS_Modal>div>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.genericCSS_Modal>div>h1{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 54px;
+    color: #000000;
+    margin-bottom: 40px;
+}
+
+.genericCSS_Modal>div>input{
+    width: 422px;
+    height: 52px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+}
+.genericCSS_Modal>div>select{
+    width: 422px;
+    height: 52px;
+    background: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21px;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+}
+
+.genericCSS_Modal>div>button{
+    width: 422px;
+    height: 52px;
+    background: #36B37E;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21px;
+    color: white;
+      margin-bottom: 15px;
+}

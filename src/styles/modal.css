@@ -1,0 +1,214 @@
+body{
+    position: relative;
+}
+
+main{
+    width: 100%;
+    height: calc(100vh - 80px);/*usando para abatero cabeçalho*/
+   
+
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header>img{
+    width: 320px;
+    height: 25px;
+    margin-left: 140px;
+}
+
+#button_header--Containner {
+    padding-right: 140px;
+    display: flex;
+    flex-direction: row;
+}
+
+#button_header--Containner > button {
+    width: 142px;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter';
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #0000FF;
+    color: #0000FF;
+    cursor: pointer;
+}
+
+#button_header--Containner > button:hover{
+    background: #0000FF;
+    border: 1px solid #0000FF;
+    color: #FFFFFF;
+}
+
+#button_header--cadastro{
+    margin-left: 15px;
+}
+
+.GenericSection_containnerModal{
+    width: 100%;
+    height: calc(100vh - 80px);/*usando para abatero cabeçalho*/
+    position: absolute;
+    top:80px;
+}
+
+.GenericSection_containnerModal>img{
+    width: 100%;
+    height: calc(100vh - 80px);/*usando para abatero cabeçalho*/
+  }
+
+.modal_controller{
+    position: absolute;
+    top: 150px;
+    left: 500px;
+    background: rgba(255, 255, 255, 0.95);
+ 
+}
+
+#loginModal_containner{
+    background: rgba(255, 255, 255, 0.95);
+    padding: 42px;
+    border: 2px solid cornflowerblue;
+
+}
+
+#loginModal_containner>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+#loginModal_containner>div>h1{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 60px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+
+#loginModal_containner>div>p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+#loginModal_containner>div>form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#loginModal_containner>div>form>input{
+    width: 422px;
+    height: 52px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+#loginModal_containner>div>form>p{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#loginModal_containner>div>form>button{
+    width: 422px;
+    height: 52px;
+    font-family: 'Inter';
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #0000FF;
+    color: #0000FF;
+    cursor: pointer;
+}
+
+#loginModal_containner>div>form>button:hover{
+    background: #0000FF;
+    border: 1px solid #0000FF;
+    color: #FFFFFF;
+}
+
+
+#cadastroModal_containner{
+    background: rgba(255, 255, 255, 0.95);
+    padding: 42px;
+    border: 2px solid cornflowerblue;
+
+}
+
+#cadastroModal_containner>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+#cadastroModal_containner>div>h1{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 60px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+#cadastroModal_containner>div>form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#cadastroModal_containner>div>form>input{
+    width: 422px;
+    height: 52px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+#cadastroModal_containner>div>form>button{
+    width: 422px;
+    height: 52px;
+    font-family: 'Inter';
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #0000FF;
+    color: #0000FF;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#cadastroModal_containner>div>form>button:hover{
+    background: #0000FF;
+    border: 1px solid #0000FF;
+    color: #FFFFFF;
+}
