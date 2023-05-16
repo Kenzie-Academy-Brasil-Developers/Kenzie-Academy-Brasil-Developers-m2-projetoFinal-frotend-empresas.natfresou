@@ -7,6 +7,8 @@ const requestHeaders = {
     Authorization: `Bearer ${token}`
 }
 
+// 1.Listar todas as categorias/setores
+
 export async function categoriesRequest() {
     const categories = await fetch ( `${baseUrl}categories/readAll`, {
         method:"GET",
@@ -28,7 +30,7 @@ export async function categoriesRequest() {
     return categories
 }
 
-
+//2.Listar empresas por categorias/setores
 
 export async function categoriesRequestFilter(category_name) {
     const categories = await fetch ( `${baseUrl}companies/readByCategory/${category_name}`, {
@@ -51,6 +53,7 @@ export async function categoriesRequestFilter(category_name) {
     return categories
 }
 
+//3.Listar empresas as empresas e suas categorias/setores
 
 export async function companiesRequest() {
     const categories = await fetch ( `${baseUrl}companies/readAll`, {
@@ -73,6 +76,7 @@ export async function companiesRequest() {
     return categories
 }
 
+//4.Criar cadastro
 
 export async function creatEmployeesRequest(cadastroBody) {
     const cadastroWay = await fetch ( `${baseUrl}employees/create`, {
@@ -104,6 +108,8 @@ export async function creatEmployeesRequest(cadastroBody) {
     return cadastroWay
     
 }
+
+//5.Faze login
 
 export async function loginRequest(loginBody) {
     const loginWay = await fetch ( `${baseUrl}auth/login`, {
@@ -148,6 +154,8 @@ export async function loginRequest(loginBody) {
 
 // console.log(teste)
 
+//6.
+
 export async function employeesDetailsRequest() {
     const employeeDetails = await fetch ( `${baseUrl}employees/profile`, {
         method:"GET",
@@ -175,6 +183,7 @@ export async function employeesDetailsRequest() {
     return employeeDetails
 }
 
+//7. Listar todos os usuários cadastrados
 
 export async function cadastroUsersRequest() {
     const cadastroUsers = await fetch ( `${baseUrl}employees/readAll`, {
@@ -202,6 +211,8 @@ export async function cadastroUsersRequest() {
 
 cadastroUsersRequest()
 
+//8. Listar os departamentos por empresa
+
 export async function departmentsForCompanyRequest(company_id) {
     const departmentsForCompany = await fetch ( `${baseUrl}companies/readById/${company_id}`, {
         method:"GET",
@@ -225,6 +236,7 @@ export async function departmentsForCompanyRequest(company_id) {
     //console.log(departmentsForCompany)
     return departmentsForCompany
 }
+//9. Listar todos os departamentos cadastrados
 
 export async function allDepartments() {
     const allDepartmentsList = await fetch (`${baseUrl}departments/readAll`, {
@@ -250,6 +262,8 @@ export async function allDepartments() {
     return allDepartmentsList 
 }
 
+//10. Criar departamento
+
 export async function NewDepartmentRequest(NewDepartmentBody) {
     const newDepartment = await fetch ( `${baseUrl}departments/create`, {
         method:"POST",
@@ -273,4 +287,152 @@ export async function NewDepartmentRequest(NewDepartmentBody) {
     })
     //console.log(cadastroUsers)
     return newDepartment
+}
+
+// deletar usuário
+
+export async function userRemove(userRemove_id) {
+    console.log(userRemove_id)
+    const userDelete = await fetch (`${baseUrl}employees/deleteEmployee/${userRemove_id}`, {
+        method:"DELETE",
+        headers:requestHeaders,
+    })
+    .then( async(res)=>{
+        if(res.ok) {
+            const response = await res.json()
+            alert("Usuário demitido com sucesso")
+            console.log(response)
+            return response
+        } else {
+            const response = await res.json()
+            alert(`${response.message}`)
+        }
+    })
+
+console.log(userDelete)
+    return userDelete
+}
+
+// deletar departamento
+
+export async function departmentRemove(departmentRemove_UUID) {
+
+    const userDelete = await fetch (`${baseUrl}departments/delete/${departmentRemove_UUID}`, {
+        method:"DELETE",
+        headers:requestHeaders,
+    })
+    .then( async(res)=>{
+        if(res.ok) {
+            const response = await res.json()
+            alert("Departamento excluido com sucesso")
+            console.log(response)
+            return response
+        } else {
+            const response = await res.json()
+            alert(`${response.message}`)
+        }
+    })
+
+console.log(userDelete)
+    return userDelete
+}
+
+// editar usuário
+
+export async function UserEdit(employee_UUID,editBody) {
+
+    const newInformUser = await fetch (`${baseUrl}employees/updateEmployee/${employee_UUID}`, {
+        method:"PATCH",
+        headers:requestHeaders,
+        body:JSON.stringify(editBody)
+    })
+    .then( async(res)=>{
+        if(res.ok) {
+            const response = await res.json()
+           // console.log(response)
+            return response
+        } else {
+            const response = await res.json()
+            alert(`${response.message}`)
+        }
+    })
+
+//console.log(newInformUser)
+    return newInformUser
+}
+
+// editar departamento
+
+export async function departamentoEdit(departamento_UUID,editBody) {
+
+    const newInformDepart = await fetch (`${baseUrl}departments/update/${departamento_UUID}`, {
+        method:"PATCH",
+        headers:requestHeaders,
+        body:JSON.stringify(editBody)
+    })
+    .then( async(res)=>{
+        if(res.ok) {
+            const response = await res.json()
+            console.log(response)
+            alert(`Edição da descrição do departamento realizada com sucesso`)
+            return response
+        } else {
+            const response = await res.json()
+            alert(`${response.message}`)
+        }
+    })
+
+console.log(newInformDepart)
+    return newInformDepart
+}
+
+//Listar funcionários ainda não contratados
+
+export async function funcionariosParaContratar() {
+    const funcionarios = await fetch (`${baseUrl}employees/outOfWork`, {
+        method:"GET",
+        headers:requestHeaders
+    })
+    .then( async(res)=>{
+        if(res.ok) {
+            const response = await res.json()
+            localStorage.setItem('newfuncionarios',JSON.stringify(response))
+            //console.log(response)
+            return response
+        } else {
+            const response = await res.json()
+            localStorage.removeItem('newfuncionarios')
+            throw new Error(`${response.message}`)
+        }
+    })
+    .catch (Error =>{
+        console.log(Error)
+    })
+    //console.log(allDepartmentsList )
+    return funcionarios 
+}
+
+// Contratar funcionário
+
+export async function contratarNewFuncionario(newFuncionario_UUID,departamento_id) {
+
+    const contratarFuncionario = await fetch (`${baseUrl}employees/hireEmployee/${newFuncionario_UUID}`, {
+        method:"PATCH",
+        headers:requestHeaders,
+        body:JSON.stringify(departamento_id)
+    })
+    .then( async(res)=>{
+        if(res.ok) {
+            const response = await res.json()
+            alert("Funcionário contratado com sucesso")
+            console.log(response)
+            return response
+        } else {
+            const response = await res.json()
+            alert(`${response.message}`)
+        }
+    })
+
+console.log(contratarFuncionario)
+    return contratarFuncionario
 }

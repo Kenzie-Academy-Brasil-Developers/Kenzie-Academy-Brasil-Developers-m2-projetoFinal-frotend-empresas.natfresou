@@ -274,7 +274,7 @@ header>img{
 
 }
 
-.modalDepartamento_criar{
+.genericCSS_Modal{
     background: rgba(255, 255, 255, 0.95);
     padding: 42px;
     border: 2px solid cornflowerblue;
@@ -308,6 +308,15 @@ header>img{
     line-height: 54px;
     color: #000000;
     margin-bottom: 40px;
+}
+.genericCSS_Modal>div>h2{
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 42px;
+text-align: center;
+color: #000000;
 }
 
 .genericCSS_Modal>div>input{
@@ -351,5 +360,141 @@ header>img{
     font-size: 17px;
     line-height: 21px;
     color: white;
-      margin-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.modalDepartamento_deletar>div{
+    width: 733px;
+    height:342px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modalDepartamento_deletar>div>div{
+
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self:flex-end;
+}
+.modalDepartamento_deletar>div>button{
+   margin-top: 50px;
+   background-color:  #FF5630;
+}
+
+.modalUser_deletar>div>button{
+    margin-top: 50px;
+    background-color:  #FF5630;
+}
+
+.modalDepartamento_visualizarCSS{
+    width:857px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 42px;
+    border: 2px solid cornflowerblue;
+}
+
+.modalDepartamento_visualizarCSS>div{
+    display: flex;
+    flex-direction: column;
+}
+.modalDepartamento_visualizarCSS>div>h1{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 54px;
+    color: #000000;
+    margin-bottom: 40px;
+}
+
+.modalDepartamento_visualizarCSS>div>h3{
+    font-family: 'Poppins';
+    font-weight: 700;
+    Size:20px;
+    line-height:30px;
+    margin-bottom: 20px;
+}
+
+.modalDepartamento_visualizarCSS>div>p{
+    font-family: 'Poppins';
+    font-weight: 400;
+    Size:18px;
+    line-height:27px;
+    margin-bottom: 20px;
+
+}
+#divSpanClose{
+
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self:flex-end;
+}
+#select_users{
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+color: rgba(0, 0, 0, 0.5);
+padding-left: 20px;
+padding-right: 345px;
+padding-top: 20px;
+padding-bottom: 20px;
+margin-right: 50px;
+}
+
+#contratarButton{
+    width: 220px;
+    height: 67px;
+    background: #36B37E;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#divSelectUser{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+}
+.divAdminAction{
+    display: flex;
+    flex-direction: row;
+}
+
+#userListDiv{
+    margin-top: 50px;
+    width: 792px;
+    height: 290px;
+    background: #F8F8F8;
+}
+
+
+#desligarButton{
+    background-color:  #FF5630;
+    width: 220px;
+    height: 67px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+
+}
+
+#divDemitir{
+margin-top:50px;
 }

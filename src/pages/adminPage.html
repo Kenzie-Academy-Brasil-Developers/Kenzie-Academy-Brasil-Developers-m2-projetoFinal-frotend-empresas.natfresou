@@ -48,8 +48,8 @@
                     <span class="spanClose">X</span>
                 </div>
                 <h1>Criar departamento</h1>
-                <Input type="text" name="name" placeholder="Nome do departamento" id="criarDepartamento_newNome"></Input>
-                <Input type="text" name="description" placeholder="Descrição" id="criarDepartamento_newDescrição"></Input>
+                <Input type="text" class="input_criarDepart" name="name" placeholder="Nome do departamento" id="criarDepartamento_newNome"></Input>
+                <Input type="text" class="input_criarDepart" name="description" placeholder="Descrição" id="criarDepartamento_newDescrição"></Input>
                 <select name="" id="criarDepartamento_select">
                     <option id ="">Selecionar Empresas</option>
                 </select>   
@@ -57,68 +57,70 @@
             </div>
         </dialog>
 
-        <dialog class="modalDepartamento_visualizar">
+        <dialog class="modalDepartamento_visualizar  modalDepartamento_visualizarCSS">
             <div>
-                <div>
-                    <span>X</span>
+                <div id="divSpanClose">
+                    <span class="spanClose_VisualizarDepart">X</span>
                 </div>
                 <h1>Nome do departamento</h1>
                 <h3>Descrição do departamento</h3>
                 <p>Empresa pertencente</p>
-                <div>
-                    <select name="" id="">
-                        <option id ="">Selecionar Usuário</option>
+                <div id="divContratar" class="divAdminAction">
+                    <select name="" id="select_users">
+                        <option id ="">Selecionar Usuário para Contratação</option>
                     </select>
-                    <button>Contratar</button>
+                    <button id="contratarButton">Contratar</button>
                 </div>
-                <div>
-    
+                <div id="divDemitir" class="divAdminAction">
+                    <select name="" id="select_users">
+                        <option id ="">Selecionar Usuário para Deligamento</option>
+                    </select>
+                    <button id="desligarButton">Desligar</button>
                 </div>
+   
             </div>
         </dialog>
 
-      
-
-        <dialog class="modalDepartamento_editar">
+        <dialog class="modalDepartamento_editar genericCSS_Modal">
             <div>
                 <div>
-                    <span>X</span>
+                    <span class="spanClose_EditDepart" >X</span>
                 </div>
-                <h1>editar departamento</h1>
-                <Input type="text" name="nome" placeholder="Nome do departamento"></Input>
-                <button>Salvar</button>
+                <h1>Editar departamento</h1>
+                <Input type="text" name="description" id="Departamento_editarInput" placeholder=""></Input>
+                <button id="Departamento_editarButton">Salvar</button>
             </div>
         </dialog>
 
-        <dialog class="modalDepartamento_deletar">
+        <dialog class="modalDepartamento_deletar genericCSS_Modal">
             <div>
                 <div>
-                    <span>X</span>
+                    <span class="spanClose_dellDepart">X</span>
                 </div>
-                <h1>Realmente deseja remover o departamento e demitir todos os funcionários?</h1>
-                <button>Remover</button>
+                <h2>Realmente deseja remover o departamento e demitir todos os funcionários?</h2>
+                <button id="Departamento_deletar">Remover</button>
             </div>
         </dialog>
 
-        <dialog class="modalUser_editar">
+        <dialog class="modalUser_editar genericCSS_Modal">
             <div>
                 <div>
-                    <span>X</span>
+                    <span class="spanClose_editUser">X</span>
                 </div>
-                <h1>editar usuário</h1>
-                <Input type="text" name="nome" placeholder="Nome"></Input>
-                <Input type="email" name="email" placeholder="Email"></Input>
-                <button>Salvar</button>
+                <h1>Editar usuário</h1>
+                <Input type="text" class="userEditar_input" name="name" placeholder="Nome"></Input>
+                <Input type="email" name="email" class="userEditar_input" placeholder="Email"></Input>
+                <button   id="user_editarButton">Salvar</button>
             </div>
         </dialog>
 
-        <dialog class="modalUser_deletar">
+        <dialog class="modalUser_deletar genericCSS_Modal">
             <div>
                 <div>
-                    <span>X</span>
+                    <span class="spanClose_dellUser">X</span>
                 </div>
-                <h1>Realmente deseja remover o usuário?</h1>
-                <button>Remover</button>
+                <h2>Realmente deseja remover o usuário?</h2>
+                <button class="user_deletar">Remover</button>
             </div>
         </dialog>
         

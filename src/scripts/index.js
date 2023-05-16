@@ -3,7 +3,7 @@ import {loginModal,cadastroModal,doLogin,doCadastro} from "./modal.js"
 
 function autentication(){
 const token = localStorage.getItem("loginToken")
-const acessLevel = localStorage.getItem("loginToken")
+const acessLevel = localStorage.getItem("loginLevel")
 
 if(token){
     if(acessLevel == true) {
