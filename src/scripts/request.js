@@ -154,7 +154,7 @@ export async function loginRequest(loginBody) {
 
 // console.log(teste)
 
-//6.
+//6.Rota responsavel por mostrar as informações do usuário logado
 
 export async function employeesDetailsRequest() {
     const employeeDetails = await fetch ( `${baseUrl}employees/profile`, {
@@ -289,7 +289,7 @@ export async function NewDepartmentRequest(NewDepartmentBody) {
     return newDepartment
 }
 
-// deletar usuário
+// 11. deletar usuário
 
 export async function userRemove(userRemove_id) {
     console.log(userRemove_id)
@@ -313,7 +313,7 @@ console.log(userDelete)
     return userDelete
 }
 
-// deletar departamento
+// 12. deletar departamento
 
 export async function departmentRemove(departmentRemove_UUID) {
 
@@ -337,7 +337,7 @@ console.log(userDelete)
     return userDelete
 }
 
-// editar usuário
+// 13. editar usuário
 
 export async function UserEdit(employee_UUID,editBody) {
 
@@ -361,7 +361,7 @@ export async function UserEdit(employee_UUID,editBody) {
     return newInformUser
 }
 
-// editar departamento
+// 14.editar departamento
 
 export async function departamentoEdit(departamento_UUID,editBody) {
 
@@ -386,7 +386,7 @@ console.log(newInformDepart)
     return newInformDepart
 }
 
-//Listar funcionários ainda não contratados
+//15. Listar funcionários ainda não contratados
 
 export async function funcionariosParaContratar() {
     const funcionarios = await fetch (`${baseUrl}employees/outOfWork`, {
@@ -412,9 +412,9 @@ export async function funcionariosParaContratar() {
     return funcionarios 
 }
 
-// Contratar funcionário
+// 16. Contratar funcionário
 
-export async function contratarNewFuncionario(newFuncionario_UUID,departamento_id) {
+export async function contratarFuncionario(newFuncionario_UUID,departamento_id) {
 
     const contratarFuncionario = await fetch (`${baseUrl}employees/hireEmployee/${newFuncionario_UUID}`, {
         method:"PATCH",
@@ -435,4 +435,48 @@ export async function contratarNewFuncionario(newFuncionario_UUID,departamento_i
 
 console.log(contratarFuncionario)
     return contratarFuncionario
+}
+// 17. Demitir funcionario de um departamento
+export async function demitirFuncionario(newFuncionario_UUID,departamento_id) {
+
+    const demitirFuncionario = await fetch (`${baseUrl}employees/dismissEmployee/${newFuncionario_UUID}`, {
+        method:"PATCH",
+        headers:requestHeaders,
+    })
+    .then( async(res)=>{
+        if(res.ok) {
+            const response = await res.json()
+            alert("Funcionário demitido com sucesso")
+            console.log(response)
+            return response
+        } else {
+            const response = await res.json()
+            alert(`${response.message}`)
+        }
+    })
+
+console.log(demitirFuncionario)
+    return demitirFuncionario
+}
+
+// 18. Listar departamento pelo ID
+export async function dadosDepartamento(departamento_id) {
+
+    const departamento = await fetch (`${baseUrl}departments/readById/${departamento_id}`, {
+        method:"PATCH",
+        headers:requestHeaders,
+    })
+    .then( async(res)=>{
+        if(res.ok) {
+            const response = await res.json()
+            console.log(response)
+            return response
+        } else {
+            const response = await res.json()
+            alert(`${response.message}`)
+        }
+    })
+
+console.log(departamento)
+    return departamento
 }

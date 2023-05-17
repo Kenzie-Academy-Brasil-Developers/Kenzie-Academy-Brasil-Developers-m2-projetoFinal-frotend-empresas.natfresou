@@ -1,4 +1,4 @@
-import {companiesRequest,NewDepartmentRequest,cadastroUsersRequest,departmentsForCompanyRequest,allDepartments,userRemove,departmentRemove,UserEdit,departamentoEdit,funcionariosParaContratar,contratarNewFuncionario} from "./request.js"
+import {companiesRequest,NewDepartmentRequest,cadastroUsersRequest,departmentsForCompanyRequest,allDepartments,userRemove,departmentRemove,UserEdit,departamentoEdit,funcionariosParaContratar,contratarFuncionario,demitirFuncionario} from "./request.js"
 allDepartments()
 cadastroUsersRequest()
 
@@ -57,7 +57,7 @@ export async function allDepartmentsRender() {
 
     const companiesInforms = await companiesRequest()
     //console.log(companiesInforms)
-    const allDepartmentsList = JSON.parse(localStorage.getItem('allDepartments')) 
+    const allDepartmentsList = await allDepartments()
 
     allDepartmentsList.forEach(department => {
         //console.log(allDepartmentsList)
@@ -276,7 +276,7 @@ export async function cadastroUsersRender(){
     ul.id = "ul_cadastroUsersRender"
     cadastroUsersSection.innerHTML=""
     ul.innerHTML=""
-    const cadastroUsersResponse = JSON.parse(localStorage.getItem('cadastroUsersResponse')) 
+    const cadastroUsersResponse = await cadastroUsersRequest()
     console.log(cadastroUsersResponse)
     const companiesInforms = await companiesRequest()
 
@@ -297,7 +297,7 @@ export async function cadastroUsersRender(){
             IdCompany.innerText = "Usuário ainda não contratado"
         } else {
             const empresa =  companiesInforms.find(element =>element.id==companyId)
-            console.log(empresa)
+            //console.log(empresa)
             IdCompany.innerText = empresa.name
         }
 
@@ -499,17 +499,15 @@ export async function editarDepartamento(){
     const editarButton = document.querySelector("#Departamento_editarButton")
     const inputs = document.querySelector("#Departamento_editarInput")
     //console.log (inputs)
-    const departamentoEditId = JSON.parse(localStorage.getItem('idDepartamentoEdit')) 
-    //const departamentoEditIdString= departamentoEditId.toString()
-    //console.log(departamentoEditIdString)
-    const departamentoEditName = JSON.parse(localStorage.getItem('nameDepartamentoEdit')) 
-    const departamentoEditDescription = JSON.parse(localStorage.getItem('descriptionDepartamentoEdit'))
-    //inputs.value = departamentoEditDescription
+    
 
     let editBody = {}
 
     editarButton.addEventListener("click", async function() {
-
+        allDepartmentsRender()    
+        const departamentoEditId = JSON.parse(localStorage.getItem('idDepartamentoEdit')) 
+        const departamentoEditIdString= departamentoEditId.toString()
+        const departamentoEditName = JSON.parse(localStorage.getItem('nameDepartamentoEdit')) 
         editBody.description=inputs.value
         editBody.name = departamentoEditName
         const editarDepart = await departamentoEdit(departamentoEditIdString,editBody)
@@ -525,15 +523,12 @@ editarDepartamento()
 export async function newUserContratar() {
 
    const newUserList = await funcionariosParaContratar()
-   const departamento = JSON.parse(localStorage.getItem('idDepartamentoVisualizar')) 
-   console.log(departamento)
    const select = document.querySelector("#select_users")
    const button = document.querySelector("#contratarButton") 
    console.log(button)
    const objeto={}
    
-    objeto.department_id=departamento 
-    console.log(objeto)
+    
     
     newUserList.forEach(user => {
         const option = document.createElement("option")
@@ -544,7 +539,7 @@ export async function newUserContratar() {
     });
 
     button.addEventListener("click", async function() {
-
+        console.log(select)
         const userContratar = select.value
         const userContratarString = userContratar.toString()
         console.log(userContratarString)
@@ -552,26 +547,114 @@ export async function newUserContratar() {
         if (select.value == "Selecionar Usuário para Contratação") {
             alert("Selecione um usuário")
         } else {
-            const setorFilter = await contratarNewFuncionario(userContratarString, objeto)
+            allDepartmentsRender()
+            const departamento = JSON.parse(localStorage.getItem('idDepartamentoVisualizar'))
+            objeto.department_id=departamento 
+            console.log(objeto) 
+            const setorFilter = await contratarFuncionario(userContratarString, objeto)
             console.log (setorFilter)
         }
+
     })  
 
 }
 newUserContratar()
 
-// export async function newUserFilter() {
+export async function UserDemitir() {
 
-//     const newUserList = await funcionariosParaContratar()
-//     const contratarButton = document.querySelector("#contratarButton")
-//     const select = document.querySelector("#select_users")
+    const allFuncionarios = await cadastroUsersRequest()
+    const select = document.querySelector("#select_usersDemitir")
+    const openModal = document.querySelector(".divDemitir_span")
+    const dialogModal = document.querySelector('.modalDepartamento_Demitir')
+    const spanClose = document.querySelector('.spanClose_Demitir')
+    const button = document.querySelector("#desligarButton") 
+    console.log(button)
+    const objeto={}
     
-//     newUserList.forEach(user => {
+    openModal.addEventListener("click", async function() {
+        dialogModal.showModal()
+
+    })
+    spanClose.addEventListener("click", async function() {
+        dialogModal.close()
+    })
+     
+    allFuncionarios.forEach(user => {
+       console.log(user)
+       if(user.company_id !== null) {
+        const option = document.createElement("option")
+        option.value = user.id
+        option.innerText = user.name
+        //console.log(option)
+        select.append(option)
+       }
+     });
+ 
+      button.addEventListener("click", async function() {
+         
+         const userDemitir = select.value
+         const userDemitirString = userDemitir.toString()
+         console.log(userDemitirString )
+ 
+         if (select.value == "Selecionar Usuário para Deligamento") {
+             alert("Selecione um usuário")
+         } else {
+             allDepartmentsRender()
+             const departamento = JSON.parse(localStorage.getItem('idDepartamentoVisualizar'))
+             objeto.department_id=departamento 
+             console.log(objeto) 
+             const setorFilter = await demitirFuncionario(userDemitirString, objeto)
+             console.log (setorFilter)
+         }
+ 
+     })  
+ 
+ }
+ UserDemitir()
+
+
+//  export async function UserDemitir() {
+
+//     const allFuncionarios = await cadastroUsersRequest()
+//     const select = document.querySelector("#select_usersDemitir")
+//     const button = document.querySelector("#desligarButton") 
+//     console.log(button)
+//     allDepartmentsRender()
+//     const departamento = JSON.parse(localStorage.getItem('idDepartamentoVisualizar'))
+//     const objeto={}
+//     objeto.department_id=departamento 
+//     console.log(objeto) 
+
+    
+//     button.addEventListener("click", async function() {
+         
+//         const userDemitir = select.value
+//         const userDemitirString = userDemitir.toString()
+//         console.log(userDemitirString )
+
+//         if (select.value == "Selecionar Usuário para Deligamento") {
+//             alert("Selecione um usuário")
+//         } else {
+//             allDepartmentsRender()
+           
+//             const setorFilter = await contratarNewFuncionario(userDemitirString, objeto)
+//             console.log (setorFilter)
+//         }
+
+//     }) 
+     
+//     allFuncionarios.forEach(user => {
+//        console.log(user)
+//        if(user.company_id !== null) {
 //         const option = document.createElement("option")
 //         option.value = user.id
 //         option.innerText = user.name
-//         console.log(option)
+//         //console.log(option)
 //         select.append(option)
-//     });
-// }
-// newUserContratar()
+//        }
+//      });
+ 
+     
+ 
+//  }
+//  UserDemitir()

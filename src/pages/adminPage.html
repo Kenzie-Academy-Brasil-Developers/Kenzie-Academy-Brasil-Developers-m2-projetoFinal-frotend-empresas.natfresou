@@ -27,7 +27,10 @@
     <section class="departamentosEmpresaSelect">
         <div class="departamentosEmpresaSelect_divCriar">
             <h1>Departamentos</h1>
-            <span class="divCriar_span">+ Criar</span>
+            <div>
+                <span class="divCriar_span">Criar Departamento</span>
+                <span class="divDemitir_span">Demitir usuário</span>
+            </div>          
         </div>
        
         <div class="departamentosEmpresaSelect_divRender">
@@ -62,24 +65,29 @@
                 <div id="divSpanClose">
                     <span class="spanClose_VisualizarDepart">X</span>
                 </div>
-                <h1>Nome do departamento</h1>
-                <h3>Descrição do departamento</h3>
-                <p>Empresa pertencente</p>
+                <h1>Contratar para o Departamento</h1>
                 <div id="divContratar" class="divAdminAction">
                     <select name="" id="select_users">
                         <option id ="">Selecionar Usuário para Contratação</option>
                     </select>
                     <button id="contratarButton">Contratar</button>
                 </div>
+   
+            </div>
+        </dialog>
+
+        <dialog class="modalDepartamento_Demitir">
+                <div id="divSpanClose">
+                    <span class="spanClose_Demitir">X</span>
+                </div>
+                <h1>Demitir usuário</h1>
                 <div id="divDemitir" class="divAdminAction">
-                    <select name="" id="select_users">
+                    <select name="" id="select_usersDemitir">
                         <option id ="">Selecionar Usuário para Deligamento</option>
                     </select>
                     <button id="desligarButton">Desligar</button>
                 </div>
-   
-            </div>
-        </dialog>
+            </dialog>
 
         <dialog class="modalDepartamento_editar genericCSS_Modal">
             <div>

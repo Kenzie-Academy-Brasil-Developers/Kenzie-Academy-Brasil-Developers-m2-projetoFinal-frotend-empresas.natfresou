@@ -65,7 +65,7 @@ export async function doLogin() {
   
     button.addEventListener('click', async (event) => {
       event.preventDefault()
-  
+
       inputs.forEach(input => {
         if(input.value.trim() === '') {
           count++
@@ -81,7 +81,6 @@ export async function doLogin() {
         return alert(`Falha no login`)
       } else {
         const goLogin = await loginRequest(loginBody)
-        alert(`Login realizado com sucesso`)
         return goLogin
       }
     })

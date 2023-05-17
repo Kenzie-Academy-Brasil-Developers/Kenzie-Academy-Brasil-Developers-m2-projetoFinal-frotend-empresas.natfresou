@@ -389,7 +389,7 @@ color: #000000;
 
 .modalDepartamento_visualizarCSS{
     width:857px;
-    height: 500px;
+    height: 300px;
     background: rgba(255, 255, 255, 0.95);
     padding: 42px;
     border: 2px solid cornflowerblue;
@@ -406,7 +406,7 @@ color: #000000;
     font-size: 36px;
     line-height: 54px;
     color: #000000;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 .modalDepartamento_visualizarCSS>div>h3{
@@ -422,7 +422,7 @@ color: #000000;
     font-weight: 400;
     Size:18px;
     line-height:27px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 
 }
 #divSpanClose{
@@ -497,4 +497,62 @@ margin-right: 50px;
 
 #divDemitir{
 margin-top:50px;
+}
+
+#select_usersDemitir{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.5);
+    padding-left: 20px;
+    padding-right: 345px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-right: 50px;
+}
+.departamentosEmpresaSelect_divCriar>div>span{
+    background-color: #0000FF;
+    color: white;
+    padding: 10px;
+    font-family: ''Poppins'';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    width: 150px;
+}
+
+.divCriar_span{
+    margin-right: 20px;
+}
+
+
+.modalDepartamento_Demitir{
+    width:857px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 42px;
+    border: 2px solid cornflowerblue;
+}
+
+.modalDepartamento_Demitir>div{
+    display: flex;
+    flex-direction: row;
+}
+.modalDepartamento_Demitir>h1{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 54px;
+    color: #000000;
+    margin-bottom: 50px;
+}
+#divSpanClose{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
